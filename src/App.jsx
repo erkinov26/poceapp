@@ -31,14 +31,18 @@ function App() {
         Next Page
       </button>
       <div className="products-list">
-        {products.map((product, i) => (
-          <div className="products-item" key={i}>
-            <h1 className="product-name">{product.name}</h1>
-            <div className="imbBox">
-              <img src={product.url} alt="" />
+        {products.length === 0 ? (
+          <p>Loading...</p>
+        ) : (
+          products.map((product, i) => (
+            <div className="products-item" key={i}>
+              <h1 className="product-name">{product.name}</h1>
+              <div className="imbBox">
+                <img src={product.url} alt="img" />
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        )}
       </div>
     </div>
   );
